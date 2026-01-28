@@ -1,49 +1,97 @@
-/* ===== Global reset ===== */
+/* =========================
+   GLOBAL RESET / BASE SETUP
+   ========================= */
+
+/* I want every element to include padding + border inside the width */
 
 *{
     box-sizing: border-box;
 }
 
+
+/* Base font size for the whole page */
 html{
 
     font-size: 16px;
 
 }
 
+/* =========================
+   BODY + BACKGROUND (FLIPPED)
+   ========================= */
+
+/* Body keeps the border + text styles */
+
 body {
 
-    background-image: url("https://images.stockcake.com/public/e/7/b/e7bcd68a-8eeb-4b08-89f6-0ca871ccbf1c/serene-workspace-view-stockcake.jpg");
-    background-size:cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family:"Georgia", "Times New Roman", serif;
+    margin: 10px;         /* space around the page border */
+    position: relative;  /* needed for ::before/::after layers */
+
+    font-family:"Georgia","Times New Roman",serif;
     font-size: 1rem;
     line-height: 1.6;
     color: #111827;
-    border: 2px solid #E5E7EB;
+    border: 3px solid #E5E7EB;
    
 }
 
-/* ===== Layout container (makes it look like a real resume) ===== */
+
+/* This is the background image layer (I flip it so it shows the other side) */
+
+body::before{
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("https://images.stockcake.com/public/e/7/b/e7bcd68a-8eeb-4b08-89f6-0ca871ccbf1c/serene-workspace-view-stockcake.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+  transform: scaleX(-1);        /* flip the background horizontally */
+  z-index: -2;                 /* flip the background horizontally */
+}
+
+/* This is a white overlay so my text is readable on top of the photo */
+
+body::after{
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+}
+
+
+/* =========================
+   PAGE CONTAINER
+   ========================= */
+
+/* This keeps the CV content centered and not too wide */
+
 .page{
     max-width: 900px;
     margin: 24px auto;
     padding: 20px;
 }
 
-/* ===== Header section ===== */
+/* =========================
+   HEADER (PHOTO + NAME)
+   ========================= */
+
+/* Flexbox to position the header items */
+
 .header {
     display: flex;
     gap: 16px;
     margin-bottom: 16px;
-    flex-wrap: wrap;
+    flex-wrap: wrap;                    /* lets text go under the image when needed */
     align-items: flex-start;
 }
 
+/* Profile picture: circle + border + shadow */
+
 .profile-pic{
-    width: 200px;     
-    height: 200px;
+    width: 350px;     
+    height: 350px;
     border-radius: 50%;
     border: 3px solid #E5E7EB;
     box-shadow: 0 8px 20px rgba(0,0,0,0.12);
@@ -51,31 +99,40 @@ body {
     flex-shrink: 0;
 }
 
+/* I want the name and title on a new line under the photo */
+
 .header-text{
     flex-basis: 100%;
     text-align: center;
 }
 
+/* Big name style */
+
 .header-text h1{
     margin: 10px 0 0;
     font-size: 2.2rem;
     border: 5px solid #E5E7EB;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.08);       /* soft shadow for the title */
 }
+
+/* Subtitle style */
 
 .header-text h2{
     margin: 8px 0 0;
     font-weight: 600;
     color: #111827;
-    font-size: 1.05rem;
+    border: 3px solid #E5E7EB;
+    border-radius: 30%;
+    font-size: 1rem;
+    background-color:#E5E7EB ;
     
 }
 
+/* =========================
+   NAVIGATION BAR
+   ========================= */
 
-
-
-/* ===== Navigation bar ===== */
-/* Style the navigation container (border, padding, background) */
-
+/* Sticky nav stays on top when you scroll */
 
 nav{
     position: sticky;
@@ -88,14 +145,31 @@ nav{
     margin-bottom: 18px;
 }
 
+/* Make the nav links stay on one line (or wrap on mobile) */
+
 nav ul{
+
     display: flex;
-    gap: 14px;
+    flex-wrap: wrap;
+    gap: 10px;
     list-style: none;
     padding: 0;
     margin: 0;
     justify-content: center;
 }
+
+
+/* Nav link style: uppercase + spacing */
+
+nav a{
+    text-transform: uppercase;
+    letter-spacing: 0.6em;
+    font-size: 0.85rem;
+}
+
+/* =========================
+   LINKS
+   ========================= */
 
 a{
     color: #2563EB;
@@ -107,6 +181,12 @@ a:hover{
     text-decoration: underline; 
 }
 
+/* =========================
+   SECTION CARDS
+   ========================= */
+
+/* Card box style to separate sections */
+
 .card{
     border: 1px solid #E5E7EB;
     border-radius: 16px;
@@ -115,18 +195,24 @@ a:hover{
     margin-bottom: 16px;
 }
 
+/* Section titles inside cards */
+
 .card h3{
     margin: 0 0 8px;
     font-size: 1.3rem;
     color: #111827;
 }
 
-/* ===== Text styles ===== */
-/* Paragraph text settings for readability */
+/* Text spacing */
+
 p, li{
     margin: 8px 0;
     text-align: left;
 }
+
+/* =========================
+   TABLE STYLE
+   ========================= */
 
 table{
     width: 100%;
@@ -136,6 +222,11 @@ table{
     background-color: #EEF2FF;
     margin-bottom: 16px;
 }
+
+
+/* =========================
+   FORM STYLE
+   ========================= */
 
 form {
     text-align: left;
@@ -152,19 +243,50 @@ input, textarea{
     background: #ffffff;
 }
 
+/* Button style + hover animation */
+
 button{
-  background-color: #6366F1;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  padding: 0.6em 1.1em;
-  font-size: 1rem;
+    background-color: #6366F1;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0.6em 1.1em;
+    font-size: 1rem;
 }
 
 button:hover{
-  filter: brightness(0.95);
+    filter: brightness(0.95);
 }
-@media (min-width: 600px){
-  .page{ padding: 24px; }
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer{
+    font-size: 0.9rem;
+    color:#4B5563
+}
+
+/* =========================
+   MOBILE (480px)
+   ========================= */
+
+/* When screen is small, I want everything to fit better */
+
+@media (max-width: 480px){
+    .page{ 
+        padding: 24px; margin:12px
+}
+    .profile-pic{
+        width: 140px; height: 140px;
+}
+    nav ul{
+        flex-wrap: wrap;
+  }
+    nav a{
+        font-size: 0.75rem;
+        padding: 6px 8px;
+        letter-spacing: 0.4em;
+  }
 }
 
