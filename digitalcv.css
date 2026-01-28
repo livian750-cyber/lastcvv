@@ -1,0 +1,170 @@
+/* ===== Global reset ===== */
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+
+    font-size: 16px;
+
+}
+
+body {
+
+    background-image: url("https://images.stockcake.com/public/e/7/b/e7bcd68a-8eeb-4b08-89f6-0ca871ccbf1c/serene-workspace-view-stockcake.jpg");
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family:"Georgia", "Times New Roman", serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #111827;
+    border: 2px solid #E5E7EB;
+   
+}
+
+/* ===== Layout container (makes it look like a real resume) ===== */
+.page{
+    max-width: 900px;
+    margin: 24px auto;
+    padding: 20px;
+}
+
+/* ===== Header section ===== */
+.header {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+}
+
+.profile-pic{
+    width: 200px;     
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid #E5E7EB;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.header-text{
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.header-text h1{
+    margin: 10px 0 0;
+    font-size: 2.2rem;
+    border: 5px solid #E5E7EB;
+}
+
+.header-text h2{
+    margin: 8px 0 0;
+    font-weight: 600;
+    color: #111827;
+    font-size: 1.05rem;
+    
+}
+
+
+
+
+/* ===== Navigation bar ===== */
+/* Style the navigation container (border, padding, background) */
+
+
+nav{
+    position: sticky;
+    top: 10px;
+    z-index: 5;
+    border: 1px solid #E5E7EB;
+    border-radius: 14px;
+    padding: 10px 12px;
+    background: rgba(255,255,255,0.92);
+    margin-bottom: 18px;
+}
+
+nav ul{
+    display: flex;
+    gap: 14px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+}
+
+a{
+    color: #2563EB;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover{ 
+    text-decoration: underline; 
+}
+
+.card{
+    border: 1px solid #E5E7EB;
+    border-radius: 16px;
+    padding: 16px;
+    background: rgba(255,255,255,0.92);
+    margin-bottom: 16px;
+}
+
+.card h3{
+    margin: 0 0 8px;
+    font-size: 1.3rem;
+    color: #111827;
+}
+
+/* ===== Text styles ===== */
+/* Paragraph text settings for readability */
+p, li{
+    margin: 8px 0;
+    text-align: left;
+}
+
+table{
+    width: 100%;
+    border: 1px solid #E5E7EB;
+    border-radius: 14px;
+    padding: 12px;
+    background-color: #EEF2FF;
+    margin-bottom: 16px;
+}
+
+form {
+    text-align: left;
+   
+}
+
+input, textarea{
+    width: 100%;
+    font-size: 1rem;
+    font-family: inherit;
+    padding: 10px;
+    border: 1px solid #E5E7EB;
+    border-radius: 10px;
+    background: #ffffff;
+}
+
+button{
+  background-color: #6366F1;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.6em 1.1em;
+  font-size: 1rem;
+}
+
+button:hover{
+  filter: brightness(0.95);
+}
+@media (min-width: 600px){
+  .page{ padding: 24px; }
+}
+

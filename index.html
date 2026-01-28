@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="digitalcv.css" />
+  <title>Livian Antolin — Digital CV</title>
+</head>
+
+<body>
+  <div class="page">
+
+    <!-- ===== Header ===== -->
+    <header class="header">
+      <img src="DAVI0256.jpeg" alt="Picture of Livian Antolin" class="profile-pic" />
+
+      <div class="header-text">
+        <h1>Livian (Livi) Antolin</h1>
+        <h2>Aspiring Software Developer | Python | HTML/CSS | Bay Area, CA</h2>
+      </div>
+    </header>
+
+    <!-- ===== Navigation ===== -->
+    <nav>
+      <ul>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <!-- ===== About ===== -->
+      <section id="about" class="about card">
+        <h3>About Me</h3>
+        <p>
+          I’m an aspiring software developer currently completing Springboard’s Software Engineering Career Track.
+          I’m building a strong foundation in Python and front-end development (HTML/CSS), and I enjoy creating clean,
+          responsive pages and beginner projects that improve with each iteration. I bring strong communication,
+          organization, and reliability from my professional background and I’m excited to transition into a junior
+          developer role.
+        </p>
+      </section>
+
+      <!-- ===== Education ===== -->
+      <section id="education" class="education card">
+        <h3>Education</h3>
+        <ul>
+          <li>Springboard — Software Engineering Career Track (In Progress)</li>
+          <li>Bachelor’s Degree in Pedagogy — Universidade do Sul de Santa Catarina (UNISUL), Brazil</li>
+        </ul>
+      </section>
+
+      <!-- ===== Skills ===== -->
+      <section id="skills" class="skills card">
+        <h3>Skills</h3>
+        <ul>
+          <li><b>Technical:</b> Python (beginner), HTML, CSS, Git/GitHub, VS Code</li>
+          <li><b>Currently learning:</b> problem-solving patterns, debugging, responsive design</li>
+          <li><b>Languages:</b> Portuguese (native), English (advanced)</li>
+        </ul>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Skill</th>
+              <th>Level</th>
+              <th>Where I’m learning / using it</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>HTML</td>
+              <td>Beginner</td>
+              <td>Springboard projects</td>
+            </tr>
+            <tr>
+              <td>CSS</td>
+              <td>Beginner</td>
+              <td>Layouts, responsive design</td>
+            </tr>
+            <tr>
+              <td>Python</td>
+              <td>Beginner</td>
+              <td>Fundamentals, file handling, functions</td>
+            </tr>
+            <tr>
+              <td>Portuguese</td>
+              <td>Native</td>
+              <td>Everyday use</td>
+            </tr>
+            <tr>
+              <td>English</td>
+              <td>Advanced</td>
+              <td>Everyday use + coursework</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ===== Projects ===== -->
+      <section id="projects" class="projects card">
+        <h3>Projects</h3>
+
+        <h4>Digital CV Website (HTML/CSS)</h4>
+        <ul>
+          <li>Built a responsive resume webpage using semantic HTML and clean CSS.</li>
+          <li>Improved readability with consistent spacing, typography, and section structure.</li>
+          <li>Deployed the site with GitHub Pages and update it using Git version control.</li>
+        </ul>
+
+        <h4>Python Practice Projects (Beginner)</h4>
+        <ul>
+          <li>Created small scripts to practice variables, functions, loops, and file reading/writing.</li>
+          <li>Focused on clean code, clear naming, and basic error handling.</li>
+        </ul>
+      </section>
+
+      <!-- ===== Experience ===== -->
+      <section id="experience" class="experience card">
+        <h3>Experience</h3>
+        <h4>Childcare Provider — Bay Area, CA | 2022–Present</h4>
+        <ul>
+          <li>Managed schedules, routines, and logistics with strong reliability and attention to detail.</li>
+          <li>Communicated clearly with families and adapted quickly to changing needs.</li>
+          <li>Maintained a safe, structured environment while handling responsibilities independently.</li>
+        </ul>
+      </section>
+
+      <!-- ===== Contact ===== -->
+      <section id="contact" class="card">
+        <h3>Contact</h3>
+        <p><b>Email:</b> Livian750@gmail.com</p>
+
+        <form class="contact-form">
+          <p>This form is included as part of a class assignment to practice HTML form elements.</p>
+
+          <label for="name">Name</label><br />
+          <input id="name" name="name" type="text" placeholder="Enter your name" required /><br /><br />
+
+          <label for="email">Email</label><br />
+          <input id="email" name="email" type="email" placeholder="Enter your email" required /><br /><br />
+
+          <label for="role">Role</label><br />
+          <input id="role" name="role" type="text" placeholder="Role you are contacting about" /><br /><br />
+
+          <label for="position">Position Applied For</label><br />
+          <input id="position" name="position" type="text" placeholder="Enter the position name" /><br /><br />
+
+          <label for="location"><b>Location / Work Preference</b></label><br />
+          <select id="location" name="location">
+            <option value="">--Select--</option>
+            <option value="onsite">Bay Area (On-site)</option>
+            <option value="remote">Remote (US)</option>
+            <option value="hybrid">Hybrid (Bay Area)</option>
+            <option value="relocate">Open to relocate</option>
+          </select><br /><br />
+
+          <p><b>Preferred time to contact</b></p>
+          <input id="morning" type="radio" name="contact_time" value="morning" />
+          <label for="morning">Morning (9am–12pm)</label><br />
+                <input id="afternoon" type="radio" name="contact_time" value="afternoon" />
+          <label for="afternoon">Afternoon (12pm–5pm)</label><br />
+
+          <input id="evening" type="radio" name="contact_time" value="evening" />
+          <label for="evening">Evening (5pm–8pm)</label><br /><br />
+
+          <label for="message"><b>Message</b></label><br />
+          <textarea id="message" name="message" rows="8" minlength="10" maxlength="1000" required></textarea><br /><br />
+
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>
+          
